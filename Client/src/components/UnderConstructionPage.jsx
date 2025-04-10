@@ -27,7 +27,7 @@ export default function UnderConstructionPage() {
     setMessage('');
 
     try {
-      const response = await fetch('http://localhost:4000/api/subscribe', {
+      const response = await fetch('https://whitehill-backend.onrender.com/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
