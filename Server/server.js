@@ -2,7 +2,8 @@ import express from "express";
 import dotenv from "dotenv";  // Fixed import syntax
 import mongoose from "mongoose";
 import cors from "cors";
-import router from "./routes/subscriberRoutes.js";  // Moved after express initialization
+import subscriberRouter from "./routes/subscriberRoutes.js";  // Moved after express initialization
+import visitorRouter from "./routes/visitorRoutes.js";
 
 // Initialize dotenv before using process.env
 dotenv.config();
@@ -23,7 +24,8 @@ mongoose.connect(process.env.MONGO_URI,)
 .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
-app.use('/api', router);
+app.use('/api', subscriberRouter);
+app.use('/api', visitorRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

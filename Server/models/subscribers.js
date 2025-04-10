@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const subscriberSchema = new mongoose.Schema({
   email: {
@@ -19,4 +19,4 @@ const subscriberSchema = new mongoose.Schema({
   }
 });
 
-export const subscribers = mongoose.model('Subscriber', subscriberSchema);
+export default mongoose.model('Subscriber', subscriberSchema);

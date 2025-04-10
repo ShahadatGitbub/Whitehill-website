@@ -1,9 +1,10 @@
-import express from "express"
-import { getSubscribers, markAsNotified, subscribe } from "../controllers/subscriberController.js";
-const router = express.Router();
+import express from 'express';
+import { subscribe, getSubscribers, markAsNotified } from '../controllers/subscriberController.js';
 
+const subscriberRouter = express.Router();
 
-router.post('/subscribe',subscribe);
-router.get('/subscribers',getSubscribers);
-router.post('/notify', markAsNotified);
-export default router;
+subscriberRouter.post('/subscribe', subscribe);
+subscriberRouter.get('/subscribers', getSubscribers);
+subscriberRouter.post('/notify', markAsNotified);
+
+export default subscriberRouter;
